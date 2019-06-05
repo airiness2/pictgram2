@@ -20,6 +20,10 @@
   <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス", size: "60" %><br>
   <%= f.password_field :password, class: "form-control", placeholder: "パスワード", size: "60" %><br>
   <%= f.password_field :password_confirmation, class: "form-control", placeholder: "確認用パスワード", size: "60" %><br>
+  <%= image_tag(@user.avatar.url) if @user.avatar && @user.avatar.url %>
+  <%= f.file_field :avatar %><br>
+  <%= f.hidden_field :avatar_cache %>
+
 
   <%= f.submit "アカウント登録", class: 'btn btn-success' %>
 </div>
