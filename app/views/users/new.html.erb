@@ -1,0 +1,27 @@
+<h2>新規アカウントを作成</h2>
+<h4>無料でご利用いただけます。</h4>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="container">
+
+<%= form_with(model: @user, local: true) do |f| %>
+<div class="form-inline">
+  <%= f.text_field :name, class: "form-control", placeholder: "名前", size: "60" %><br>
+  <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス", size: "60" %><br>
+  <%= f.password_field :password, class: "form-control", placeholder: "パスワード", size: "60" %><br>
+  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "確認用パスワード", size: "60" %><br>
+
+  <%= f.submit "アカウント登録", class: 'btn btn-success' %>
+</div>
+<% end %>
+</div>
