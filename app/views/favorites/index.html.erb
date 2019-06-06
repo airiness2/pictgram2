@@ -1,0 +1,8 @@
+<h1>お気に入り</h1>
+
+
+<% @favorites.each do |favorite| %>
+  <% picture = Picture.find(favorite.picture_id) %>
+    <%= picture.content %><br>
+    <%= image_tag(picture.image.url) if picture.image && picture.image.url %><br>
+<% end %>
