@@ -20,9 +20,13 @@
         <td colspan="3" width="400" height=auto><%= simple_format(picture.content) %></td>
     </tr>
     <tr>
-        <td><%= link_to '詳細', picture_path(picture.id), class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to "編集", edit_picture_path(picture.id), class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: "本当に削除していいですか？"}, class: "btn btn-default btn-xs" %></td>
+
+        <td><%= link_to '詳細', picture_path(picture.id), class: "btn btn-outline-primary btn-sm" %></td>
+
+        <% if current_user.id == picture.user.id %>
+        <td><%= link_to "編集", edit_picture_path(picture.id), class: "btn btn-outline-primary btn-sm" %></td>
+        <td><%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: "本当に削除していいですか？"}, class: "btn btn-outline-primary btn-sm" %></td>
+        <% end %>
     </tr>
     <% end %>
 </table>

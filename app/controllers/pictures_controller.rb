@@ -4,6 +4,9 @@ class PicturesController < ApplicationController
 
     before_action :sign_in_user
 
+    before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+
+
     def index
       @pictures = Picture.all
     end
@@ -67,5 +70,13 @@ class PicturesController < ApplicationController
       redirect_to new_user_path unless logged_in?
     end
 
+
+    def ensure_correct_user
+      @picture = Picture.find_by(id: params[:id])
+      if current_user.id != @picture.user_id
+        flash[:notice] = "権限がありません"
+        redirect_to root_path
+      end
+    end
 
 end
