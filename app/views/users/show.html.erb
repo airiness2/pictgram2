@@ -2,11 +2,11 @@
 <div class="profile">
 
 <div class="profile_img">
-<%= image_tag @user.avatar.url %>
+<%= image_tag(@user.avatar.url, size: "100") %>
 </div>
 
 <div class="profile_txt">
-<font size="35"><%= @user.name %></font>
+<font size="50"><%= @user.name %></font>
 <%= link_to "プロフィールを編集", edit_user_path(@user.id) %>
 </div>
 

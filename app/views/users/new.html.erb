@@ -18,7 +18,7 @@
 <% end %>
 
 <br>
-SNSbookでログイン<br>
+<span class="btn btn-primary">SNSbookでログイン</span><br>
 <br>
 --------または--------
 <br>
@@ -30,7 +30,7 @@ SNSbookでログイン<br>
   <%= f.password_field :password_confirmation, class: "form-control", placeholder: "確認用パスワード", size: "60" %><br>
   <%= f.file_field :avatar, class: "form-control" %><br>
   <%= f.hidden_field :avatar_cache, class: "form-control" %>
-  <%= f.submit "登録する", class: 'btn btn-success' %>
+  <%= f.submit "登録する", class: 'btn btn-primary' %>
 <% end %>
 <br>
 <br>

@@ -11,15 +11,16 @@
 <% end %>
 
 <div class="container">
+  <font size="10rem"><%= @user.name %></font>
+
   <table align="center">
     <tr>
       <td>
-    <%= image_tag(@user.avatar.url, size: "30") if @user.avatar && @user.avatar.url %>
+    <%= image_tag(@user.avatar.url, size: "75") if @user.avatar && @user.avatar.url %>
       </td>
       <td>
     <%= form.file_field :avatar %><br>
     <%= form.hidden_field :avatar_cache %>
-    <%= @user.name %>
       </td>
     </tr>
     <tr>
