@@ -3,7 +3,7 @@ module PicturesHelper
       if action_name == 'new' || action_name == 'confirm'
           confirm_pictures_path
       elsif action_name == 'edit'
-          post_path
+          picture_path
       end
   end
 end

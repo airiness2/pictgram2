@@ -1,11 +1,15 @@
 <h3>ログイン</h3>
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 
-<div class="form-inline">
+<div class="form-group">
 
   <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス", size: "60" %><br>
   <%= f.password_field :password, class: "form-control", placeholder: "パスワード", size: "60" %><br>
 
-  <%= f.submit "ログイン", class: 'btn btn-default' %>
+  <%= f.submit "ログイン", class: 'btn btn-info' %>
 
 <% end %>
+
+<div class="push"></div>
+
+<%= link_to '新しくアカウントを作成', new_user_path, class: "btn btn-primary" %>

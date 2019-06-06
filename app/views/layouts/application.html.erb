@@ -10,14 +10,10 @@
 
   <body>
     <div class="container">
-
-  <div class="pageall">
-
-
-    <% if logged_in? %>
     <header>
       <ul>
 
+        <% if logged_in? %>
       <li><%= link_to current_user.name, user_path(current_user.id) %></li>
       <li><%= link_to "ホーム", pictures_path %></li>
       <li><a href="#">友達を検索</a></li>
@@ -32,12 +28,16 @@
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     <%= yield %>
+
     </div>
 
     <div class="push"></div>
 
 
-    <footer>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted">
         <span>Pictgramについて</span>
         <span>サポート</span>
         <span>プレス</span>
@@ -50,7 +50,8 @@
         <span>ハッシュタグ</span>
         <span>言語</span>
 
-    </footer>
-    </div>
+      </p>
+  </footer>
+
   </body>
 </html>

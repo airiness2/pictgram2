@@ -1,17 +1,13 @@
 html {
-  height: 100%;
   min-height: 100%;
   width: 100%;
-}
+  position: relative;
 
-.pageall {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 body {
   text-align: center;
+  margin-bottom: 60px;
 }
 
 a {
@@ -108,8 +104,7 @@ header ul:after {
 }
 
 .profile {
-  background-color: #eee;
-  text-align: left;
+  margin-left: 100px;
 }
 
 .profile_img {
@@ -148,7 +143,10 @@ header ul:after {
 
 
 footer {
-  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }
 
 
