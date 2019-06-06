@@ -12,6 +12,6 @@ class User < ApplicationRecord
 
     has_many :pictures
 
-    mount_uploader :image, ImageUploader
+    mount_uploader :avatar, ImageUploader
 
 end

@@ -9,13 +9,15 @@
   </head>
 
   <body>
+    <div class="container">
+
   <div class="pageall">
+
 
     <% if logged_in? %>
     <header>
       <ul>
 
-      <li><%= image_tag 'f.png' %></li>
       <li><%= link_to current_user.name, user_path(current_user.id) %></li>
       <li><%= link_to "ホーム", pictures_path %></li>
       <li><a href="#">友達を検索</a></li>
@@ -26,7 +28,6 @@
     </ul>
   </header>
 
-    <div class="container">
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>

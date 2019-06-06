@@ -1,0 +1,52 @@
+<%= form_with(model: @user, local: true, url: new_user_path ) do |form| %>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+    <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+    <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="container">
+  <table align="center">
+    <tr>
+      <td>
+    <%= image_tag(@user.avatar.url, size: "30") if @user.avatar && @user.avatar.url %>
+      </td>
+      <td>
+    <%= form.file_field :avatar %><br>
+    <%= form.hidden_field :avatar_cache %>
+    <%= @user.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= form.label :name %>
+      </td>
+      <td>
+        <%= form.text_area :name, size: "60" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= form.label :email %>
+      </td>
+      <td>
+        <%= form.text_area :email, size: "60"  %>
+      </td>
+    </tr>
+
+
+
+    <tr>
+      <td colspan="2">
+    <%= form.submit "投稿する", class: 'btn btn-success' %>
+      </td>
+    </tr>
+  </table>
+
+<% end %>
+</div>
