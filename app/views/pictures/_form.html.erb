@@ -12,12 +12,13 @@
 
 <div class="container">
 <div class="picture_content">
-<div class="form-inline">
-    <%= form.text_area :content, class: "form-control", placeholder: "いまなにしてる？", size: "60" %><br>
+<div class="form-group">
+    <%= form.label "画像をアップロード" %>
     <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
     <%= form.file_field :image, class: "form-control" %><br>
     <%= form.hidden_field :image_cache %>
-    <%= form.submit "投稿する", class: 'btn btn-success' %>
+    <%= form.text_area :content, class: "form-control", placeholder: "コメント" %><br>
+    <%= form.submit "アップロード", class: 'btn btn-success' %>
 <% end %>
  </div>
 </div>

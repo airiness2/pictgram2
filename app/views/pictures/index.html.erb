@@ -1,39 +1,23 @@
 <br>
-<%= notice %>
 
-<div class="linkpage">
-    <ul>
-        <li>ニュースフィード</li>
-        <li>Messenger</li>
-        <li>Watch</li>
-        <li>ショートカット</li>
-        <li>発見</li>
-        <li>Facebookページ</li>
-        <li>グループ</li>
-        <li>イベント</li>
-        <li>ゲーム</li>
-        <li>募金キャンペーン</li>
-    </ul>
-</div>
-
+<div class="container">
 <div class="picturelist">
-<br>
-<table>
-    <tr>
-        <td colspan="3"><%= link_to '投稿を作成', new_picture_path, class: "btn btn-info" %></td>
-    </tr>
+<%= link_to '投稿を作成', new_picture_path, class: "btn btn-info" %>
+
+<div class="push"></div>
+<table align="center">
     <% @pictures.each do |picture| %>
     <tr>
-        <td colspan="3" width="400" height=auto align="left"><font size="16">
+        <td colspan="3" width="400" height=auto align="left"><font size="4rem">
             <%= link_to picture.user.name, user_path(picture.user.id) %></font></td>
     </tr>
     <tr>
-        <td colspan="3" width="400" height=auto><%= simple_format(picture.content) %></td>
-        <% if picture.image.present? %>
+      <% if picture.image.present? %>
+      <td colspan="3" width="400" height=auto><%= image_tag picture.image.url %></td>
     </tr>
     <tr>
-        <td colspan="3" width="400" height=auto><%= image_tag picture.image.url %></td>
         <% end %>
+        <td colspan="3" width="400" height=auto><%= simple_format(picture.content) %></td>
     </tr>
     <tr>
         <td><%= link_to '詳細', picture_path(picture.id), class: "btn btn-default btn-xs" %></td>
@@ -45,16 +29,7 @@
 
 </div>
 
-<div class="friends">
-    <ul>
-        <li>知り合いかも</li>
-        <li>Aさん</li>
-        <li>Bさん</li>
-        <li>Cさん</li>
-        <li>Dさん</li>
-        <li>Eさん</li>
-        <li>Fさん</li>
-    </ul>
+
 </div>
 
 
