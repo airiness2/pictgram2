@@ -6,10 +6,11 @@
 
 <div class="push"></div>
 <table align="center">
-    <% @pictures.each do |picture| %>
+  <% @pictures.each do |picture| %>
     <tr>
-        <td colspan="3" width="400" height=auto align="left"><font size="4rem">
-            <%= link_to picture.user.name, user_path(picture.user.id) %></font></td>
+      <td colspan="3" width="400" height=auto align="left"><font size="4rem">
+        <%= link_to picture.user.name, user_path(picture.user.id) %></font>
+      </td>
     </tr>
     <tr>
       <% if picture.image.present? %>
@@ -20,9 +21,7 @@
         <td colspan="3" width="400" height=auto><%= simple_format(picture.content) %></td>
     </tr>
     <tr>
-
         <td><%= link_to '詳細', picture_path(picture.id), class: "btn btn-outline-primary btn-sm" %></td>
-
         <% if current_user.id == picture.user.id %>
         <td><%= link_to "編集", edit_picture_path(picture.id), class: "btn btn-outline-primary btn-sm" %></td>
         <td><%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: "本当に削除していいですか？"}, class: "btn btn-outline-primary btn-sm" %></td>
@@ -30,9 +29,7 @@
     </tr>
     <% end %>
 </table>
-
 </div>
 </div>
-
 
 <div class="push"></div>

@@ -1,7 +1,8 @@
 class ContactMailer < ApplicationMailer
-  def send_when_create(picture)
+  default from: "hogehoge@example.com"
+
+  def send_confirm_to_user(user)
     @user = user
-    mail to:      user.email,
-         subject: '新しく画像がアップロードされました!'
+    mail to: @user.email, subject: "投稿完了です"
   end
 end
