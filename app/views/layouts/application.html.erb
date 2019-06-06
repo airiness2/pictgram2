@@ -24,19 +24,14 @@
 
     </ul>
   </header>
-
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     <%= yield %>
 
-    </div>
+<div class="push"></div>
 
-    <div class="push"></div>
-
-
-
-  <footer class="footer">
+  <footer>
     <div class="container">
       <p class="text-muted">
         <span>Pictgramについて</span>
@@ -50,9 +45,8 @@
         <span>プロフィール</span>
         <span>ハッシュタグ</span>
         <span>言語</span>
-
       </p>
+      </div>
   </footer>
-
   </body>
 </html>
