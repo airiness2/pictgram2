@@ -1,4 +1,9 @@
-<h2>Instagram</h2>
+
+<div class="col-12">
+
+<div class="mx-auto">
+
+<h1>Pictgram</h1>
 <h4>友達の写真や動画をチェックしよう</h4>
 
 <% if @user.errors.any? %>
@@ -12,22 +17,29 @@
   </div>
 <% end %>
 
-Facebookでログイン<br>
-----または----
+<br>
+SNSbookでログイン<br>
+<br>
+--------または--------
+<br>
 <%= form_with(model: @user, local: true) do |f| %>
-<div class="form-inline">
+<div class="form-group">
   <%= f.text_field :name, class: "form-control", placeholder: "名前", size: "60" %><br>
   <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス", size: "60" %><br>
   <%= f.password_field :password, class: "form-control", placeholder: "パスワード", size: "60" %><br>
   <%= f.password_field :password_confirmation, class: "form-control", placeholder: "確認用パスワード", size: "60" %><br>
-  <%= image_tag(@user.avatar.url) if @user.avatar && @user.avatar.url %>
-  <%= f.file_field :avatar %><br>
-  <%= f.hidden_field :avatar_cache %>
-
-
+  <%= f.file_field :avatar, class: "form-control" %><br>
+  <%= f.hidden_field :avatar_cache, class: "form-control" %>
   <%= f.submit "登録する", class: 'btn btn-success' %>
 <% end %>
-登録することで、Facebookの利用規約、データに関するポリシー、Cookieポリシーに同意するものとします。
+<br>
+<br>
+登録することで、SNSbookの利用規約、データに関するポリシー、Cookieポリシーに同意するものとします。
 </div>
 
 アカウントをお持ちですか？<%= link_to "ログイン", new_session_path %>
+
+</div>
+
+
+<div class="push"></div>
