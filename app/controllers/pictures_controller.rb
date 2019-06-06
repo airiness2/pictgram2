@@ -20,7 +20,7 @@ class PicturesController < ApplicationController
       @picture = Picture.new(picture_params)
       @picture.user_id = current_user.id
       if @picture.save
-        redirect_to pictures_path, notice: "ブログを作成しました!"
+        redirect_to pictures_path, notice: "画像をアップロードしました!"
       else
         render 'new'
       end
@@ -34,7 +34,7 @@ class PicturesController < ApplicationController
 
     def update
       if @picture.update(picture_params)
-        redirect_to pictures_path, notice: "ブログを編集しました！"
+        redirect_to pictures_path, notice: "投稿を編集しました！"
       else
         render 'edit'
       end
@@ -42,7 +42,7 @@ class PicturesController < ApplicationController
 
     def destroy
       @picture.destroy
-      redirect_to pictures_path, notice: "ブログを削除しました！"
+      redirect_to pictures_path, notice: "画像を削除しました！"
     end
 
 
