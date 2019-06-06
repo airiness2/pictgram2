@@ -1,7 +1,7 @@
 class ContactMailer < ApplicationMailer
-  def contact_mail(contact)
-  @contact = contact
-
-  mail to: "blackgothy@gmail.com", subject: "お問い合わせの確認メール"
-end
+  def send_when_create(picture)
+    @user = user
+    mail to:      user.email,
+         subject: '新しく画像がアップロードされました!'
+  end
 end

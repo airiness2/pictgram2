@@ -1,11 +1,11 @@
 ja:
   activerecord:
     models:
-      post: "投稿"
+      picture: "投稿"
       user: "ユーザー"
     attributes:
-      post:
-        content: "内容"
+      picture:
+        content: "コメント"
         image: "画像"
       user:
         name: "名前"
@@ -14,4 +14,4 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
-        
+        avatar: "アバター"
