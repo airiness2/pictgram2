@@ -23,7 +23,7 @@ class PicturesController < ApplicationController
       @picture = Picture.new(picture_params)
       @picture.user_id = current_user.id
       if @picture.save
-        ContactMailer.send_confirm_to_user(current_user).deliver_now
+＃        ContactMailer.send_confirm_to_user(current_user).deliver_now
         redirect_to pictures_path, notice: "画像をアップロードしました!"
       else
         render 'new'
