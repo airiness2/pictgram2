@@ -5,7 +5,7 @@ lock '3.6.0'
 set :application, 'pictgram2'
 
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/ray/pictgram2'
+set :repo_url, 'https://github.com/airiness2/pictgram2'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
